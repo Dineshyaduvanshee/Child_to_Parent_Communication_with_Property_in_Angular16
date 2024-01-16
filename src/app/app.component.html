@@ -1,0 +1,8 @@
+
+<div style="text-align: center;">
+  <h1 class="blinking-text">!!Parent Component!!</h1>
+ <p> Value of Child Component : {{cdata}}</p>
+ <p>Value of Student Component : {{sdata}}</p>
+  <app-child (childevent)="getData($event)"></app-child>
+  <app-student (studentevent)="getStudentData($event)"></app-student>
+</div>

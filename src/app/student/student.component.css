@@ -1,0 +1,22 @@
+h1{
+    background-color: palegreen;
+}
+input{
+    background-color: paleturquoise;
+}
+@keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .blinking-text {
+    animation: blink 1s infinite; /* Adjust the duration as needed */
+  }
+  
