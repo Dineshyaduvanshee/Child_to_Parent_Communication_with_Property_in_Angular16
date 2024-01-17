@@ -1,8 +1,103 @@
-
-<div style="text-align: center;">
+<!-- <div style="text-align: center;">
   <h1 class="blinking-text">!!Parent Component!!</h1>
- <p> Value of Child Component : {{cdata}}</p>
- <p>Value of Student Component : {{sdata}}</p>
+  <p> Value of Child Component : {{cdata}}</p>
+  <p>Value of Student Component : {{sdata}}</p>
   <app-child (childevent)="getData($event)"></app-child>
   <app-student (studentevent)="getStudentData($event)"></app-student>
 </div>
+
+<div style="text-align: center;">
+  <h1>!!Using NgIf!!</h1>
+  <input type="radio" name="radio1" (click)="changeValue(true)">True
+  <input type="radio" name="radio1" (click)="changeValue(false)">False
+</div>
+
+<div style="text-align: center;" class="blinking-text" *ngIf="isValid">
+
+  <h1>!!Using NgIf!!</h1>
+  <input type="radio" name="radio1" (click)="changeValue(true)">True
+  <input type="radio" name="radio1" (click)="changeValue(false)">False
+  <p style="color: green;">This is Valid Data </p>
+</div>
+
+<div class="blinking-text" style="text-align: center;" *ngIf="!isValid">
+  <p style="color: red;">This is not Valid Data </p>
+</div>
+<div *ngIf="isValid; elseblock" style="text-align: center;" class="blinking-text">
+
+</div>
+<ng-template #elseblock>
+  <div style="text-align: center;" class="blinking-text">
+    <p style="color: green;">This is not Valid using elseblock</p>
+  </div>
+</ng-template>
+<div>
+
+  <div style="text-align: center;" class="blinking-text"   >
+    <h1>!!Using NgIf With else and then !!</h1>
+    <input type="radio" name="radio1" (click)="changeValue(true)">True
+    <input type="radio" name="radio1" (click)="changeValue(false)">False
+    <div *ngIf="isValid; then thenblock; else elseblock">
+      <ng-template #thenblock>
+      <p style="color: green;">This is Valid Data </p>
+    </ng-template>
+    <ng-template #elseblock>
+      <p style="color: red;">This is  not Valid Data </p>
+    </ng-template>
+    </div>
+    
+  </div>
+
+  <div class="blinking-text" style="text-align: center;" *ngIf="!isValid">
+    <p style="color: red;">This is not Valid Data </p>
+  </div>
+  <div *ngIf="isValid; elseblock" style="text-align: center;" class="blinking-text">
+
+  </div> -->
+
+
+  <div style="text-align: center;">
+    <h1 class="blinking-text">!!Parent Component!!</h1>
+    <p>Value of Child Component: {{ cdata }}</p>
+    <p>Value of Student Component: {{ sdata }}</p>
+    <app-child (childevent)="getData($event)"></app-child>
+    <app-student (studentevent)="getStudentData($event)"></app-student>
+  </div>
+  
+  <div style="text-align: center;">
+    <h1>!!Using NgIf!!</h1>
+    <input type="radio" name="radio1" (click)="changeValue(true)">True
+    <input type="radio" name="radio1" (click)="changeValue(false)">False
+  </div>
+  
+  <div class="blinking-text" style="text-align: center;" *ngIf="isValid; else elseblock">
+    <h1>!!Using NgIf elseblock!!</h1>
+    <input type="radio" name="radio1" (click)="changeValue(true)">True
+    <input type="radio" name="radio1" (click)="changeValue(false)">False
+    <p style="color: green;">This is Valid Data else elseblock </p>
+  </div>
+  
+  <ng-template #elseblock>
+    <div style="text-align: center;" class="blinking-text">
+      <p style="color: red;">This is not Valid Data </p>
+    </div>
+  </ng-template>
+  
+  <div style="text-align: center;" class="blinking-text">
+    <h1>!!Using NgIf With else and then!!</h1>
+    <input type="radio" name="radio1" (click)="changeValue(true)">True
+    <input type="radio" name="radio1" (click)="changeValue(false)">False
+    <div *ngIf="isValid; then thenblock; else elseblock">
+      <ng-template #thenblock>
+        <p style="color: green;">This is Valid Data from then block </p>
+      </ng-template>
+      <ng-template #elseblock>
+        <p style="color: red;">This is not Valid Data from elseblock</p>
+      </ng-template>
+    </div>
+  </div>
+  
+  <div class="blinking-text" style="text-align: center;" *ngIf="!isValid">
+    <p style="color: red;">This is not Valid Data </p>
+  </div>
+  
